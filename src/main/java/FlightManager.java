@@ -1,11 +1,16 @@
+import java.util.ArrayList;
+
 public class FlightManager {
 
 
     private Flight flight;
+    private Passenger passenger;
+//    private ArrayList<Passenger> passengers;
 
 
-    public FlightManager(Flight flight){
-
+    public FlightManager(Flight flight, Passenger passenger){
+//        this.passengers = new ArrayList<Passenger>();
+        this.passenger = passenger;
         this.flight = flight;
     }
 
@@ -15,7 +20,9 @@ public class FlightManager {
     }
 
     public int baggageWeightUsage(){
-        return this.baggageWeightForPassenger() * flight.passengerCount();
+        int totalWeight = baggageWeightForPassenger() * passenger.numOfBags();
+        return totalWeight * flight.passengerCount();
+
     }
 
     public int totalBaggageAllowance(){

@@ -14,8 +14,8 @@ public class FlightManagerTest {
     public void setUp(){
         plane = new Plane(PlaneType.BOEING747);
         flight = new Flight(plane);
-        flightManager = new FlightManager(flight);
-        passenger = new Passenger("John", 3);
+        flightManager = new FlightManager(flight, passenger);
+        passenger = new Passenger("John", 3, flight);
 
     }
 

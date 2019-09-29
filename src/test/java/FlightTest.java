@@ -17,7 +17,7 @@ public class FlightTest {
      public void setUp(){
          plane = new Plane(PlaneType.BOEING747);
          flight = new Flight(plane);
-         passenger = new Passenger("John", 3);
+         passenger = new Passenger("John", 3, flight);
      }
      @Test
      public void canGetAvailableSeats(){
